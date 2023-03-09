@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="user.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inria Sans"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <input id="current_edit_user" type="hidden" />
+    <div id="branding" class="unselectable">
+      <h1 class="title product_name">Alexandria</h1>
+      <p class="title sub_title">By SDP Team B</p>
+    </div>
+    <div id="non_table" class="visible unselectable">
+      <div id="manage_users" class="unselectable">
+        <div class="line_title">
+          <p class="line_title_text"><span>Manage Users</span></p>
+        </div>
+        <div class="button_row">
+          <p id="add_user" class="manage_button">Add a user</p>
+        </div>
+      </div>
+      <div id="action_modal" class="modal">
+        <form class="modal-content">
+          <span class="close">&times;</span>
+          <p class="modal_title">Insert New User</p>
+          <input type="text" class="modal_input_text" id="fname" name="fname" placeholder="First Name" required>
+          <input type="text" class="modal_input_text" id="lname" name="lname" placeholder="Last Name" required><br />
+          <input type="date" class="modal_input_text" id="date" name="date" placeholder="Date of Birth" required>
+          <input type="tel" class="modal_input_text" id="phone" name="phone" placeholder="Phone"><br />
+          <input type="email" class="modal_input_text" id="email" name="email" placeholder="Email"><br />
+          <select name="borrower_type" class="modal_input_text" id="borrower_type">
+            <option value="0" label="Select borrower type" selected="selected">
+              Select borrower type ...
+            </option>
+            <option value="S">Student</option>
+            <option value="F">Faculty</option>
+          </select><br />
+          
+          <button id="create_user" class="action_button">Create</button>
+          <button id="edit_user" class="action_button">Update</button>
+        </form>
+      </div>
+      <div id="search_bar">
+        <input
+          id="search_bar_field"
+          name="query"
+          type="search"
+          placeholder="Search..."
+        />
+        <button id="search_bar_button" type="submit">Search</button>
+      </div>
+    </div>
+    <div>
+      <p class="line_title_text"><span id="table_title">All Users</span></p>
+    </div>
+    <div id="loading_container" class="loading">
+      <img src="../assets/loading.gif" />
+    </div>
+
+    <div class="user_table">
+      <table id="user_feed"></table>
+    </div>
+    <script type="text/javascript" src="user.js"></script>
+  </body>
+</html>

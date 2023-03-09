@@ -1,0 +1,107 @@
+body{
+    font-family: "Inria Sans";
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #F5F5F5;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#branding{
+    padding-top: 5px;
+    text-align: right;
+}
+.title{
+    line-height: 0px;
+}
+#heading{
+    width: 100%;
+}
+.line_title_text {
+    color: #5e5e5e;
+    font-size: 20px;
+    width: 95%; 
+    text-align: left; 
+    border-bottom: 1px solid #C0C0C05e; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+} 
+.line_title_text span { 
+    background:#F5F5F5; 
+    padding: 0px 10px 0px 0px;
+}
+#search_bar {
+    background: white;
+    width: 400px;
+    margin-top: 20px;
+    display: flex;
+    padding: 2px;
+    border-radius: 8px;
+    box-shadow: 5px 10px 18px #88888838;
+}
+#search_bar_field[type="search"] {
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border-radius: inherit;
+    font-family: inherit;
+    font-size: 15px;
+}
+#search_bar_field:focus{
+    outline: none;
+}
+#search_bar_button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.loading{
+    text-align: center;
+}
+.invisible{
+    display: none;
+}
+.report_button{
+    width: 45%;
+    display: inline-flex;
+    background: #fafafa;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 5px 10px 18px #0000002c; 
+    transition: 0.3s;
+}
+.report_button:hover{
+    box-shadow: 5px 10px 18px #00000073; 
+}
+.report_button_title{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.report_thumbnail{
+    align-self: center;
+    width: 35px;
+    height: 46px;
+}

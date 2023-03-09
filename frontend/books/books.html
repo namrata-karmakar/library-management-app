@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <title>Manage Books</title>
+    <link rel="stylesheet" href="books.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inria Sans"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  </head>
+
+  <body>
+    <div id="branding" class="unselectable">
+      <h1 class="title product_name">Alexandria</h1>
+      <p class="title sub_title">By SDP Team B</p>
+    </div>
+    <div id="non_table" class="visible unselectable">
+      <div id="books_and_copies">
+        <div id="manage_books" class="unselectable">
+          <div class="line_title">
+            <p class="line_title_text"><span>Manage books</span></p>
+          </div>
+          <div class="button_row">
+            <p id="add_book" class="manage_button">Add a book</p>
+          </div>
+        </div>
+
+        <!-- make changes into modal like, book name, etc -->
+        <div id="action_modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal_title">Insert/Update Book</p>
+            <input
+              type="text"
+              class="modal_input_text"
+              id="title"
+              name="title"
+              placeholder="Book Title"
+            />
+            <input
+              type="text"
+              class="modal_input_text"
+              id="i_book_image"
+              placeholder="Image URL"
+            />
+            <input
+              type="number"
+              class="modal_input_text"
+              id="isbn"
+              placeholder="ISBN"
+            />
+            <input
+              type="number"
+              class="modal_input_text"
+              id="year"
+              placeholder="Year"
+            />
+            <br /><br />
+            <select name="author" class="modal_input_text" id="author">
+              <option value="0" label="Select author" selected="selected">
+                Select an author ...
+              </option>
+            </select>
+            <br />
+            <select
+              name="restriction"
+              class="modal_input_text"
+              id="restriction"
+              onchange="onRestrictionChange()"
+            >
+              <option value="0" label="Select restriction" selected="selected">
+                Restictions (Optional)
+              </option>
+              <option value="Custom">Custom</option></select
+            ><br />
+            <fieldset id="restrictionFieldSet">
+              <legend>Define new restriction</legend>
+              <input
+                type="number"
+                class="modal_input_text"
+                id="MaxLoanDays"
+                placeholder="Maximum Loan Days"
+                min="0"
+              /><br />
+              <input
+                type="number"
+                class="modal_input_text"
+                id="MinAge"
+                placeholder="Minimum Age"
+                min="0"
+              /><br />
+              <input
+                type="date"
+                class="modal_input_text"
+                id="AvailabilityEndDate"
+                placeholder="Availability End Date"
+                min="0"
+              /><br />
+            </fieldset>
+            <br /><br />
+            <button id="create_book" onclick="onCreateBook()" class="action_button">Create</button>
+            <button id="edit_book" class="action_button">Update</button>
+          </div>
+        </div>
+
+        <div id="manage_copies" class="unselectable">
+          <div class="line_title">
+            <p class="line_title_text"><span>Manage copies</span></p>
+          </div>
+
+          <!-- Add Copies -->
+          <p id="add_copies" class="manage_button">Add copies</p>
+          <div id="action_modal_add_copies" class="modal">
+            <div class="modal-content">
+              <span class="add_copy_close">&times;</span>
+              <p class="modal_title">Add copies</p>
+              <select name="book" class="modal_input_text" id="book">
+                <option value="0" label="Select book" selected="selected">
+                  Select a book ...
+                </option>
+              </select>
+              <input
+                type="number"
+                class="modal_input_text"
+                id="noOfCopies"
+                placeholder="Number of copies"
+              />
+              <br /><br />
+              <button id="insert_copies" class="insertCopies">
+                Insert copies
+              </button>
+            </div>
+          </div>
+
+          <!-- <p class="manage_button">Edit copy count</p>  -->
+          <!-- Mark Copy as damaged -->
+          <p id="mark_copy_as_damaged" class="manage_button">
+            Mark copy as damaged
+          </p>
+          <div id="action_modal_mark_copy" class="modal">
+            <div class="modal-content">
+              <span class="mark_copy_close">&times;</span>
+              <p class="modal_title">Mark copy as damaged</p>
+              <select name="book" class="modal_input_text" id="book_mark_copy">
+                <option value="0" label="Select book" selected="selected">
+                  Select a book ...
+                </option>
+              </select>
+              <br /><br />
+              <button id="mark_copy" class="markCopy">
+                Mark copy as damaged
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form id="search_bar">
+        <input
+          id="search_bar_field_book"
+          type="search"
+          minlength="3"
+          placeholder="Search Book..."
+        />
+        <button id="search_bar_button" type="button">Search</button>
+      </form>
+    </div>
+    <div>
+      <p class="line_title_text"><span id="table_title">All Books</span></p>
+    </div>
+    <div id="loading_container" class="loading">
+      <img src="../assets/loading.gif" />
+    </div>
+
+    <div class="book_table">
+      <table id="book_feed"></table>
+    </div>
+    <div id="toast"></div>
+
+    <script type="text/javascript" src="book.js"></script>
+    <script src="../fetch.js"></script>
+  </body>
+</html>

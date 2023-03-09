@@ -1,0 +1,125 @@
+body{
+    font-family: "Inria Sans";
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #F5F5F5;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#branding{
+    padding-top: 5px;
+    text-align: right;
+}
+.title{
+    line-height: 0px;
+}
+#heading{
+    width: 100%;
+}
+.line_title_text {
+    color: #5e5e5e;
+    font-size: 20px;
+    width: 95%; 
+    text-align: left; 
+    border-bottom: 1px solid #C0C0C05e; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+} 
+.line_title_text span { 
+    background:#F5F5F5; 
+    padding: 0px 10px 0px 0px;
+}
+.input{
+    background: none;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #cecece;
+    padding-top: 15px;
+    font-size: 15px;
+    width: 190px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    font-family: "Inria Sans";
+}
+.input:focus {
+    border-color: #690020
+}
+.refresh_button{
+    color: #ffffff;
+    background-color: #2a5da8;
+    display: inline-block;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 8px;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-family: "Inria Sans"; 
+}
+.refresh_button:hover{
+    box-shadow: 5px 10px 18px #3779dca4; 
+}
+.loading{
+    text-align: center;
+}
+.invisible{
+    display: none;
+}
+.visible{
+    display: block;
+}
+#report_chart{
+    height: 400px;
+    padding: 5px;
+    border-radius: 15px;
+    background: white;
+}
+
+#table_container{
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #414141;
+}
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+th{
+    color: #2a5da8;
+}
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+.serial{
+    text-align: center;
+    color: #7d7d7d;
+    font-size: 12px;
+}
+#footer{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+#footer_text{
+    float: right;
+    background: #F5F5F5;
+    font-size: 12px;
+    padding: 0px 0px 0px 15px;
+}

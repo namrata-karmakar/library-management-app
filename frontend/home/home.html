@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>Alexandria by SDP Team B</title>
+    <link rel="stylesheet" href="home.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inria Sans"
+    />
+    <script
+      src="https://kit.fontawesome.com/5ee2c4cfaa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="branding" class="unselectable">
+      <h1 class="title product_name">Alexandria</h1>
+      <p class="title sub_title">By SDP Team B</p>
+    </div>
+    <div id="jumbotron">
+      <div id="book_stats" class="unselectable">
+        <div id="borrowed_stat" class="stat_parent" onclick="log_stuff()">
+          <img class="stat_icon" src="../assets/borrow icon.png" />
+          <div class="stat">
+            <p class="book_stats_text">Books Borrowed</p>
+            <p id="book_stats_borrowed" class="book_stats_number">0</p>
+          </div>
+        </div>
+        <div id="overdue_stat" class="stat_parent">
+          <img class="stat_icon" src="../assets/overdue icon.png" />
+          <div class="stat">
+            <p class="book_stats_text">Books Overdue</p>
+            <p class="book_stats_overdue book_stats_number">0</p>
+          </div>
+        </div>
+        <div
+          id="no_copies_stat"
+          class="stat_parent"
+          onclick="openBooksWithoutCopies()"
+        >
+          <img class="stat_icon" src="../assets/no copies icon.png" />
+          <div class="stat">
+            <p class="book_stats_text">Books without copies</p>
+            <p id="book_stats_no_copies" class="book_stats_number">0</p>
+          </div>
+        </div>
+      </div>
+      <div id="main_actions" class="unselectable">
+        <div id="issue-book" class="action_button">
+          <img class="action_icon" src="../assets/issue book.png" />
+          <div class="action_label"><p>Issue/Return books</p></div>
+        </div>
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="modal-title">Issue Or Return books</p>
+          <form>
+            <div id="borrower">
+              <div id="search_bar">
+                <input
+                  id="search_bar_field_borrower"
+                  type="search"
+                  minlength="3"
+                  placeholder="Search Borrower..."
+                />
+                <button
+                  id="search_bar_button"
+                  type="button"
+                  onclick="showBorrowerDetails()"
+                >
+                  Search
+                </button>
+              </div>
+              <div id="errorMessageContainer"></div>
+              <div>
+                <div id="listOfBorrowersContainer"></div>
+                <div id="listOfBorrowedBooks" class="listOfBorrowedBooks"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="modal-title">Return books</p>
+          <form>
+            <div id="borrower">
+              <div id="search_bar">
+                <input
+                  id="search_bar_field_borrower"
+                  type="search"
+                  minlength="3"
+                  placeholder="Search Borrower..."
+                />
+                <button
+                  id="search_bar_button"
+                  type="button"
+                  onclick="showBorrowerDetails()"
+                >
+                  Search
+                </button>
+              </div>
+              <div id="errorMessageContainer"></div>
+              <div>
+                <div id="listOfBorrowersContainer"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="defaulters_quick_view">
+        <div id="defaulters_container">
+          <p id="top_5_def_label" class="unselectable">
+            Top defaulters<br />
+          </p>
+          <div id="defulters_calender_container">
+            <table id="defulters_calender_table"></table>
+          </div>
+          <div class="total_fine_container">
+            <p class="total_fine total_fine_label unselectable">
+              Total fines from
+              <span class="book_stats_overdue">0</span> defaulters<br />
+            </p>
+            <p id="total_fine_value" class="total_fine">€ 0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="manage_section" class="unselectable">
+      <div class="manage manage_books" onclick="openManageBooks()">
+        <div class="manage_label_parent">
+          <p class="manage_label_title">Manage<br />Books<br /></p>
+          <p class="manage_label_subtitle">
+            Search and modify books and copies
+          </p>
+        </div>
+        <img class="manage_icon" src="../assets/books-manage.png" />
+      </div>
+      <div class="manage manage_authors" onclick="openManageAuthors()">
+        <div class="manage_label_parent">
+          <p class="manage_label_title">Manage<br />Authors<br /></p>
+          <p class="manage_label_subtitle">Search, add and modify authors</p>
+        </div>
+        <img class="manage_icon" src="../assets/author-manage.png" />
+      </div>
+      <div class="manage manage_users" onclick="openManageUsers()">
+        <div class="manage_label_parent">
+          <p class="manage_label_title">Manage<br />Users<br /></p>
+          <p class="manage_label_subtitle">Search, add and edit borrowers</p>
+        </div>
+        <img class="manage_icon" src="../assets/user-manage.png" />
+      </div>
+      <div class="manage view_reports" onclick="openViewReports()">
+        <div class="manage_label_parent">
+          <p class="manage_label_title">View<br />Reports<br /></p>
+          <p class="manage_label_subtitle">
+            Data views to help manage the library
+          </p>
+        </div>
+        <img class="manage_icon" src="../assets/view-reports.png" />
+      </div>
+    </div>
+    <script type="text/javascript" src="home.js"></script>
+    <script src="../fetch.js"></script>
+  </body>
+</html>

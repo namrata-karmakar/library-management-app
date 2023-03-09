@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "4f7d6584-894d-41aa-9143-e02b9a4a72a5",
+		"name": "Silverfish",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14392891"
+	},
+	"item": [
+		{
+			"name": "Insert a new author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Charles\",\r\n    \"LastName\": \"Dickens\",\r\n    \"Country\": \"United Kingdom\",\r\n    \"ImageURL\": \"https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/author",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get an author details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/author",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get author page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/authors",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search authors by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "sco",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/searchAuthors",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"searchAuthors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update an author details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AuthorID\": 15,\r\n    \"FirstName\": \"Henry\",\r\n    \"LastName\": \"James\",\r\n    \"Country\": \"USA\",\r\n    \"ImageURL\": \"https://upload.wikimedia.org/wikipedia/commons/e/ed/Henry_James_by_John_Singer_Sargent_cleaned.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/editAuthor",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"editAuthor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete an author",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "17",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/author",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert a new restriction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MaxLoanDays\": 1,\r\n    \"MinAge\": 18\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/restriction",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"restriction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get restriction details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/restriction",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"restriction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all restrictions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/restrictions",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"restrictions"
+					]
+				},
+				"description": "If a restriction type (\"MaxLoanDays\", \"MinDOB\", \"AvailabilityEndDate\") is set to 0 or is not included in the body, the corresponding column value will be set to NULL in db."
+			},
+			"response": []
+		},
+		{
+			"name": "Insert a new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"Harry Potter and the Chamber of Secrets\",\r\n    \"AuthorIDs\": [14],\r\n    \"Year\": 1998,\r\n    \"CoverURL\": \"https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg\",\r\n    \"RestrictionsID\": null,\r\n    \"ISBN\": 9780439064866\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/book",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "14",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/book",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a book details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookID\":33,\r\n    \"Title\": \"Harry Potter and the Chamber of Secrets\",\r\n    \"AuthorIDs\": [14],\r\n    \"Year\": 1998,\r\n    \"CoverURL\": \"https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Potter_and_the_Chamber_of_Secrets.jpg\",\r\n    \"RestrictionsID\": 1,\r\n    \"ISBN\": 9780439064866\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/editBook",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"editBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/books",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search books by title or author",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "The",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/searchBooks",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"searchBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert a new borrower",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Jeremy\",\r\n    \"LastName\": \"Clarkson\",\r\n    \"DateOfBirth\": -378086319,\r\n    \"ContactPhone\": \"17560000000\",\r\n    \"ContactEmail\": \"mail@clarkson.com\",\r\n    \"BorrowerType\": \"F\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/borrower",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"borrower"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a borrower details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BorrowerID\": 11,\r\n    \"FirstName\": \"Jeremy\",\r\n    \"LastName\": \"Clarkson\",\r\n    \"DateOfBirth\": -378086319,\r\n    \"ContactPhone\": \"17560000000\",\r\n    \"ContactEmail\": \"mail@clarkson.com\",\r\n    \"BorrowerType\": \"F\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/editBorrower",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"editBorrower"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a borrower",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "17",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/author",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"author"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a borrower details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "7",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/borrower",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"borrower"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get borrower page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/borrowers",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"borrowers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search borrowers by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "query",
+							"value": "ham",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/searchBorrowers",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"searchBorrowers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue a book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookID\": 5,\r\n    \"BorrowerID\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/issue",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return a book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookID\": 3,\r\n    \"BorrowerID\": 1,\r\n    \"IsDamagedOrLost\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Endpoint}}/return",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"return"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark a book as damaged",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bookID",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/markDamage",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"markDamage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert n copies of a book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Bookid",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "Copies",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/copy",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"copy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get defaulters page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/defaulters",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"defaulters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get dashboard stats",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{Endpoint}}/dashboard",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get report params",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/reportParams",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"reportParams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate a report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "xml",
+							"value": "<params includeCompleted=\"1\" />",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Endpoint}}/generateReport",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"generateReport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list of all reports",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{Endpoint}}/reports",
+					"host": [
+						"{{Endpoint}}"
+					],
+					"path": [
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Endpoint",
+			"value": "http://localhost:8080"
+		}
+	]
+}
